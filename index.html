@@ -432,6 +432,111 @@
       margin: 0;
     }
 
+
+    /* KPI blocks */
+    .kpiGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 920px){
+      .kpiGrid{ grid-template-columns: 1fr; }
+    }
+    .kpiTable{
+      width:100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 12px;
+      color: var(--muted);
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.92);
+    }
+    .kpiTable th{
+      text-align:left;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246,245,247,.95);
+    }
+    .kpiTable td{
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      background: rgba(255,255,255,.92);
+    }
+    .kpiTable tr:last-child td{ border-bottom: 0; }
+    .kpiTable .chanName{ font-weight: 950; color: var(--ink); }
+    .noteBox{
+      margin-top: 12px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(233,229,236,.9);
+      background: rgba(246,245,247,.95);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .noteBox b{ color: var(--ink); }
+    .ladder{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .rung{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,.92);
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .rung .step{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      font-weight: 950;
+      color: white;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+      flex: 0 0 auto;
+    }
+    .rung .rtitle{ font-weight: 950; font-size: 12px; margin: 0 0 4px; }
+    .rung .rdesc{ margin: 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .kpiBadges{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 8px; }
+    .kbadge{
+      font-size: 10px;
+      font-weight: 950;
+      padding: 6px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(246,245,247,.95);
+      color: var(--brand-primary);
+      white-space: nowrap;
+    }
+    .kbadge.strong{
+      border-color: rgba(39,179,151,.35);
+      background: rgba(39,179,151,.12);
+      color: #072222;
+    }
+    .kbadge.intent{
+      border-color: rgba(47,140,186,.35);
+      background: rgba(47,140,186,.10);
+      color: var(--brand-dark);
+    }
+    .kbadge.social{
+      border-color: rgba(176,44,167,.35);
+      background: rgba(176,44,167,.10);
+      color: var(--brand-primary);
+    }
+
 /* Footer */
     footer{
       margin-top: 16px;
@@ -465,7 +570,7 @@
       </div>
 
       <div class="right">
-        <div class="pill"><strong>Primary outcome:</strong> Meetings booked</div>
+        <div class="pill"><strong>Primary outcomes:</strong><span style="display:block;margin-top:4px;line-height:1.35;color:var(--muted)">• Identified high intent accounts<br/>• Value assessments completed<br/>• Value assessment/discovery calls booked</span></div>
         <div class="pill"><strong>Audience:</strong> Ping &amp; SailPoint installed base</div>
         <button class="btn" onclick="window.print()">Print / Save as PDF</button>
       </div>
@@ -896,58 +1001,352 @@
     </section>
 
 
+    
     <section class="section" id="panel-kpis" data-panel aria-labelledby="tab-kpis">
       <div class="card">
-        <h2>Predicted KPIs / outcomes</h2>
+        <h2>KPIs &amp; outcomes: Q1 ramp → 2026 goals</h2>
         <p class="sub">
-          We’ll finalise ballpark targets once the core plan is locked. This tab sets the measurement framework so ProofID
-          can see how we’ll judge success (and what we’ll change when it’s not working).
+          We’re starting from a cold installed base, so Q1 success is measured by <b>account-level momentum</b>:
+          we identify <b>high-intent MQAs</b>, drive <b>Value Assessments completed</b>, and convert those into
+          <b>Scorecard Results Reviews</b> and <b>qualified opportunities (SQLs)</b>.
         </p>
       </div>
 
       <div class="card section">
-        <h3>Scoreboard structure</h3>
-        <div class="grid3">
+        <h3>Installed base scope (accounts)</h3>
+        <div class="kpiGrid">
           <div class="mini">
-            <div class="label">Inputs</div>
-            <div class="value">Coverage</div>
-            <div class="note">% list enriched, % in journeys</div>
+            <div class="label">Ping installed base</div>
+            <div class="value">512</div>
+            <div class="note">104 EMEA · 408 US</div>
           </div>
           <div class="mini">
-            <div class="label">Leading indicators</div>
-            <div class="value">Engagement</div>
-            <div class="note">clicks, visits, assessment starts</div>
+            <div class="label">SailPoint installed base</div>
+            <div class="value">1,086</div>
+            <div class="note">200 EMEA · 886 US</div>
           </div>
           <div class="mini">
-            <div class="label">Outcomes</div>
-            <div class="value">Meetings</div>
-            <div class="note">booked debrief calls</div>
+            <div class="label">Total installed base</div>
+            <div class="value">1,598</div>
+            <div class="note">Primary unit = account (MQA)</div>
           </div>
+        </div>
+
+        <div class="noteBox">
+          <b>Account-level goal:</b> we want <b>multiple personas</b> engaging inside the same account. The more roles + signals we see,
+          the higher the intent and the higher the priority for SDR follow-up.
         </div>
       </div>
 
-      <div class="grid2 section">
-        <div class="card">
-          <h3>Channel-specific indicators</h3>
-          <ul class="list">
-            <li><b>SDR:</b> dials/emails, conversations, booked meetings, show rate.</li>
-            <li><b>LinkedIn:</b> connection accept rate, reply rate, clicks to Assessment page, paid reach to target list.</li>
-            <li><b>Website:</b> Assessment landing page CVR, starts→completions, repeat visits from target accounts.</li>
-            <li><b>Email:</b> deliverability, opens/clicks (expect low initially), clicks to Assessment.</li>
-            <li><b>LLMs/AEO:</b> assisted conversions (content → Assessment visits/starts).</li>
-          </ul>
+      <div class="card section">
+        <h3>How we score intent (MQA ladder)</h3>
+        <p class="sub">
+          We’re moving from MQLs to <b>MQAs (Marketing Qualified Accounts)</b>.
+          “High intent” is not one signal — it’s <b>signal strength</b> + <b>signal breadth</b> (2+ categories) + ideally <b>2+ personas</b>.
+        </p>
+
+        <div class="ladder">
+          <div class="rung">
+            <div class="step">1</div>
+            <div>
+              <p class="rtitle">Engaged account (EA)</p>
+              <p class="rdesc">Any meaningful interaction from ≥1 persona (e.g., LinkedIn connection accepted, website repeat visit, content click).</p>
+              <div class="kpiBadges">
+                <span class="kbadge social">LinkedIn engagement</span>
+                <span class="kbadge intent">Website engagement</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rung">
+            <div class="step">2</div>
+            <div>
+              <p class="rtitle">MQA (Marketing Qualified Account)</p>
+              <p class="rdesc">Engaged + at least one strong signal (Assessment start, pricing/solutions intent rule, or research intent spike).</p>
+              <div class="kpiBadges">
+                <span class="kbadge strong">Assessment start (email captured)</span>
+                <span class="kbadge intent">Pricing / key-page intent</span>
+                <span class="kbadge intent">3rd-party research intent</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rung">
+            <div class="step">3</div>
+            <div>
+              <p class="rtitle">High-intent MQA</p>
+              <p class="rdesc">MQA + 2+ signal categories and/or 2+ personas engaging. Assessment completion automatically qualifies as high intent.</p>
+              <div class="kpiBadges">
+                <span class="kbadge strong">Assessment completed</span>
+                <span class="kbadge social">2+ personas engaging</span>
+                <span class="kbadge intent">Multiple intent categories</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rung">
+            <div class="step">4</div>
+            <div>
+              <p class="rtitle">Scorecard Results Review (debrief call)</p>
+              <p class="rdesc">We review scorecard outputs and turn them into a prioritised set of recommendations (not a generic discovery call).</p>
+              <div class="kpiBadges">
+                <span class="kbadge strong">Debrief call booked</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rung">
+            <div class="step">5</div>
+            <div>
+              <p class="rtitle">SQL (qualified opportunity)</p>
+              <p class="rdesc">Beyond a booked meeting — the account is qualified during/following the review and becomes an active opportunity.</p>
+              <div class="kpiBadges">
+                <span class="kbadge">Shared goal KPI</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>What we’ll do with the numbers</h3>
-          <ul class="list">
-            <li><b>If reach is weak:</b> tighten list coverage + increase paid support + improve SDR profile/social proof.</li>
-            <li><b>If clicks are weak:</b> adjust hooks, framing, and CTA placement.</li>
-            <li><b>If starts are high but completions low:</b> simplify Assessment and reduce friction.</li>
-            <li><b>If completions are high but meetings low:</b> fix SDR talk track + debrief promise.</li>
-          </ul>
+
+        <div class="noteBox">
+          <b>Signal sources we will use:</b>
+          Visitor Intent (first-party reverse IP rules), Research Intent (third-party topic/competitor research),
+          External News Signals (funding/leadership changes/expansion/risks), website + assessment behaviour, and LinkedIn engagement
+          (accepts, replies, comments, profile views).
+        </div>
+      <div class="card section">
+        <h3>High-intent score checklist (account-level)</h3>
+        <p class="sub">
+          We’ll score accounts using a simple checklist so “high intent” is consistent and transparent.
+          Thresholds will be tuned once we see real data in HubSpot — the goal is prioritisation, not perfect maths.
+        </p>
+
+        <table class="kpiTable" style="margin-top:12px">
+          <thead>
+            <tr>
+              <th style="width:28%">Signal category</th>
+              <th style="width:52%">Checklist (examples)</th>
+              <th style="width:20%">Suggested score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="chanName">HubSpot: Visitor intent (first‑party)</td>
+              <td>
+                ☐ Pricing / key page intent rule hit (e.g. 2+ visits in 7 days)<br/>
+                ☐ Repeat visits across 2+ days<br/>
+                ☐ Assessment landing page visited + CTA click
+              </td>
+              <td>+3<br/>+2<br/>+2</td>
+            </tr>
+            <tr>
+              <td class="chanName">HubSpot: Research intent (third‑party)</td>
+              <td>
+                ☐ Topic spike on value optimisation themes (Ping / SailPoint)<br/>
+                ☐ Competitor research activity (relevant identity security alternatives)
+              </td>
+              <td>+3<br/>+3</td>
+            </tr>
+            <tr>
+              <td class="chanName">HubSpot: External “news” signals</td>
+              <td>
+                ☐ Funding / expansion / partnership / product launch<br/>
+                ☐ Leadership change in relevant functions (CISO/IT/Security/GRC)<br/>
+                ☐ Business risk signals (layoffs / bounce risk) — timing signal only
+              </td>
+              <td>+2<br/>+2<br/>+1</td>
+            </tr>
+            <tr>
+              <td class="chanName">Assessment behaviour (ScoreApp)</td>
+              <td>
+                ☐ Assessment started (email captured)<br/>
+                ☐ Assessment completed (scorecard generated)
+              </td>
+              <td>+3<br/>+5</td>
+            </tr>
+            <tr>
+              <td class="chanName">LinkedIn engagement</td>
+              <td>
+                ☐ Connection accepted by target persona<br/>
+                ☐ Reply / meaningful DM exchange<br/>
+                ☐ Comment / save / profile view + click to site<br/>
+                ☐ 2+ personas from the same account engaged
+              </td>
+              <td>+1<br/>+2<br/>+2<br/>+3</td>
+            </tr>
+            <tr>
+              <td class="chanName">SDR confirmation</td>
+              <td>
+                ☐ Confirmed initiative / pain on a call<br/>
+                ☐ Value assessment / scorecard results review booked
+              </td>
+              <td>+3<br/>+5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="noteBox" style="margin-top:12px">
+          <b>Rule of thumb:</b> treat an account as “high intent” when it reaches <b>6+ points</b> AND shows
+          <b>2+ signal categories</b> and/or <b>2+ personas engaged</b>. Assessment completion overrides (auto high intent).
         </div>
       </div>
+
+      </div>
+
+      <div class="card section">
+        <h3>Q1 primary outcomes (Jan–Mar 2026)</h3>
+        <div class="kpiGrid">
+          <div class="mini">
+            <div class="label">Identified high intent accounts</div>
+            <div class="value">10–18</div>
+            <div class="note">prioritised for SDR follow-up</div>
+          </div>
+          <div class="mini">
+            <div class="label">Value Assessments completed</div>
+            <div class="value">6–12</div>
+            <div class="note">ScoreApp completions (high intent)</div>
+          </div>
+          <div class="mini">
+            <div class="label">Value assessment/discovery calls booked</div>
+            <div class="value">4–8</div>
+            <div class="note">value assessment / scorecard review calls</div>
+          </div>
+        </div>
+
+        <div class="noteBox">
+          <b>Conservative SQL goal for Q1:</b> <b>2–4 SQLs</b> created during or following Results Reviews.
+          This is a cold-start ramp — we expect the curve to improve as familiarity builds through consistent touches.
+        </div>
+      </div>
+
+      <div class="card section">
+        <h3>Conservative channel returns (Q1)</h3>
+        <p class="sub">
+          These are conservative, cold-start ranges showing how each channel contributes to the primary outcomes.
+          <b>Note:</b> channels overlap (e.g., LinkedIn → website → assessment), so totals are not a straight sum.
+        </p>
+
+        <table class="kpiTable" style="margin-top:12px">
+          <thead>
+            <tr>
+              <th style="width:22%">Channel</th>
+              <th style="width:26%">Primary role in the path</th>
+              <th style="width:16%">High-intent MQAs</th>
+              <th style="width:16%">Assessments completed</th>
+              <th style="width:16%">Value assessment/discovery calls booked</th>
+              <th style="width:14%">SQLs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="chanName">LinkedIn (HeyReach + organic + paid)</td>
+              <td>Reach + familiarity + multiple touchpoints; drives clicks into the assessment path.</td>
+              <td>8–15</td>
+              <td>5–10</td>
+              <td>3–7</td>
+              <td>0–2</td>
+            </tr>
+            <tr>
+              <td class="chanName">SDR (HubSpot Sales Workspace)</td>
+              <td>Convert warm intent into booked Results Reviews; qualify into SQLs during/after calls.</td>
+              <td>4–8</td>
+              <td>3–6</td>
+              <td>3–6</td>
+              <td>1–3</td>
+            </tr>
+            <tr>
+              <td class="chanName">Website + Assessment</td>
+              <td>Conversion choke-point: landing page + ScoreApp completion creates strong intent and prioritisation signals.</td>
+              <td>6–12</td>
+              <td>6–12</td>
+              <td>3–7</td>
+              <td>1–3</td>
+            </tr>
+            <tr>
+              <td class="chanName">Email (newsletter “air cover”)</td>
+              <td>Familiarity + reinforcement; supports SDR and LinkedIn (expect low direct return in Q1).</td>
+              <td>0–2</td>
+              <td>0–2</td>
+              <td>0–1</td>
+              <td>0–1</td>
+            </tr>
+            <tr>
+              <td class="chanName">LLMs / AEO (seed for later)</td>
+              <td>Longer-term discoverability; measure as assists. Do not rely on this for Q1 primary outcomes.</td>
+              <td>0–1</td>
+              <td>0–1</td>
+              <td>0–1</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="noteBox">
+          <b>Paid assumption:</b> model assumes some always-on LinkedIn spend to guarantee reach into the installed base.
+          If paid budget is materially lower/higher, we adjust the “reach → click → assessment” ramp accordingly.
+        </div>
+      </div>
+
+      
+      <div class="card section">
+        <h3>How Q1 ladders into 2026 goals</h3>
+        <p class="sub">
+          Q1 is a cold-start ramp: we establish consistent touchpoints (Google’s 7–11–4 logic), build familiarity and trust,
+          and then improve conversion rates as the installed base repeatedly sees ProofID across channels.
+        </p>
+
+        <div class="kpiGrid" style="margin-top:12px">
+          <div class="mini">
+            <div class="label">2026 programme SQL target</div>
+            <div class="value">25–30</div>
+            <div class="note">Ping + SailPoint installed base (with SDR)</div>
+          </div>
+          <div class="mini">
+            <div class="label">Q1 contribution (conservative)</div>
+            <div class="value">2–4</div>
+            <div class="note">SQLs created during/after calls</div>
+          </div>
+          <div class="mini">
+            <div class="label">Leading indicators we build first</div>
+            <div class="value">Intent → Assessments</div>
+            <div class="note">multi-persona, multi-signal MQAs</div>
+          </div>
+        </div>
+
+        <div class="noteBox" style="margin-top:12px">
+          <b>Context:</b> the wider GTM scorecard may target <b>90 SQLs</b> across all sources (events, SDR prospecting, partners, etc.).
+          This installed-base programme is scoped to deliver <b>25–30 SQLs</b> across 2026, in conjunction with SDR follow-up.
+        </div>
+
+        <div class="noteBox">
+          <b>Q1 success criteria:</b> <b>10–18 high-intent accounts</b> identified, <b>6–12 assessments completed</b>,
+          <b>4–8 calls booked</b>, and <b>2–4 SQLs</b> created. This is ~<b>8–16%</b> of the annual programme SQL target — appropriate for a ramp quarter.
+        </div>
+
+        <div class="grid2" style="margin-top:12px">
+          <div class="card" style="box-shadow:none">
+            <h3 style="margin-top:0">What improves as familiarity builds</h3>
+            <ul class="list">
+              <li><b>Connection accepts + replies</b> improve as the SDR looks familiar and content feels consistently relevant.</li>
+              <li><b>Assessment starts</b> rise as the Value Realisation Assessment is seen repeatedly (not once).</li>
+              <li><b>Calls booked</b> improve when “Scorecard Results Review” is clear, specific, and valuable.</li>
+              <li><b>SQL rate</b> increases as accounts show multiple personas + multiple intent categories.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="box-shadow:none">
+            <h3 style="margin-top:0">Q1 ramp management</h3>
+            <ul class="list">
+              <li><b>January:</b> lists + scoring live, conversion assets live, outreach starts.</li>
+              <li><b>February:</b> expand reach (paid + HeyReach), tighten messaging based on SDR feedback.</li>
+              <li><b>March:</b> prioritise high-intent accounts, push completion → call booking.</li>
+              <li><b>Weekly:</b> optimisation loop (what moved, what didn’t, what we change).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+>
     </section>
+
 
     <footer>
       Mini app with tabs (built for screen-sharing + screenshots). Update brand colours in <span style="font-family:var(--mono)">:root</span>.
