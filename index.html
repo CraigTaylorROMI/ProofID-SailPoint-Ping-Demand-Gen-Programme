@@ -646,77 +646,161 @@ ul.bullets li{
 </div>
     </section>
 
-    <section class="section" id="panel-channels" data-panel aria-labelledby="tab-channels">
-      <div class="card">
-  <h2>Channels</h2>
-  <p class="sub">
-    Activity is led through five channels (SDR, LinkedIn, Website, Email, LLMs/AEO) with a single conversion path:
-    earned/paid → ProofID site/assessment → assessment call → qualified opportunity (SQL).
-  </p>
-</div>
+  <section class="section" id="panel-channels" data-panel="channels">
+  <div class="card">
+    <h2>Channels</h2>
+    <p class="sub">
+      The programme is led by execution across five channels — all pointing to the same conversion path:
+      <b>Assessment → Results Review call → qualified opportunity (SQL)</b>.
+    </p>
+  </div>
 
-<div class="grid2">
-  <div class="card section">
-    <h3>SDR</h3>
-    <ul class="list">
-      <li><b>HubSpot Sales Workspace:</b> SDR set-up with enriched Ping + SailPoint data + account views</li>
-      <li><b>Outreach:</b> calls + emails run from HubSpot</li>
-      <li><b>Follow-up:</b> prioritise high-intent MQAs and convert assessment interest into calls</li>
-    </ul>
-    <div class="noteBox" style="margin-top:12px">
-      <b>SDR enablement content (key deliverable):</b>
-      email templates (Ping + SailPoint), follow-up sequences, assessment positioning / objection-handling script,
-      and a clear “Scorecard Results Review” call talk-track.
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;">
+    <!-- SDR -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">SDR (HubSpot Sales Workspace)</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Impact: High</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Timeline: ASAP</span>
+        </div>
+      </div>
+
+      <p class="sub">Priority channel for converting high-intent engagement into booked meetings.</p>
+
+      <ul class="list">
+        <li><b>Setup:</b> SDR working in HubSpot Sales Workspace with enriched Ping + SailPoint installed-base data.</li>
+        <li><b>Outreach assets:</b> email templates that reuse programme content + a call script for the Value Realisation Assessment.</li>
+        <li><b>Operating model:</b> SDR calls + 1:1 emails in HubSpot; prioritise based on engagement + signals.</li>
+        <li><b>Phase 2:</b> consider Prospecting Agent for semi-automated outbound once core messaging is proven.</li>
+      </ul>
+
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> booked “Assessment Debrief” calls + feedback loop to improve messaging.
+      </div>
     </div>
-    <p class="meta"><b>Impact:</b> High · <b>Timeline:</b> ASAP</p>
-  </div>
 
-  <div class="card section">
-    <h3>LinkedIn</h3>
-    <ul class="list">
-      <li><b>Profile optimisation:</b> make SDR profile directly relevant to ProofID ICP + add conversion assets</li>
-      <li><b>Targeting:</b> upload contacts from target accounts + connect via HeyReach (20/day)</li>
-      <li><b>Automated messages:</b> 3-message cadence to be agreed</li>
-      <li><b>Posting:</b> 1–2 posts/week (increase social proof + connection acceptance)</li>
-      <li><b>Paid support:</b> use target list + LinkedIn ads so content reaches the full audience</li>
-      <li><b>Engagement support:</b> coordinate ProofID advocates to like/comment/save/repost</li>
-    </ul>
-    <p class="meta"><b>Impact:</b> High · <b>Timeline:</b> ASAP</p>
-  </div>
-</div>
+    <!-- LinkedIn -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">LinkedIn (SDR-led + coordinated Proof support)</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Impact: High</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Timeline: ASAP</span>
+        </div>
+      </div>
 
-<div class="grid2">
-  <div class="card section">
-    <h3>Website</h3>
-    <ul class="list">
-      <li><b>Assessment landing page:</b> dedicated page promoting the Value Realisation Assessment</li>
-      <li><b>On-site promotion:</b> CTAs + pop-ups to drive assessment starts</li>
-      <li><b>Content routing:</b> link relevant content + AEO blogs into the assessment path</li>
-    </ul>
-    <p class="meta"><b>Impact:</b> High · <b>Timeline:</b> ASAP</p>
-  </div>
+      <p class="sub">Used to expand reach, increase familiarity, and improve connection + reply rates.</p>
 
-  <div class="card section">
-    <h3>LLMs (AEO)</h3>
-    <ul class="list">
-      <li><b>Question research:</b> identify common questions on Ping/SailPoint value optimisation</li>
-      <li><b>AEO blogs:</b> structure content to answer those questions clearly (built to be cited by LLMs)</li>
-      <li><b>Measurement:</b> assisted journeys (content → assessment visits/starts)</li>
-    </ul>
-    <p class="meta"><b>Impact:</b> Medium · <b>Timeline:</b> 2nd phase</p>
-  </div>
-</div>
+      <ul class="list">
+        <li><b>Profile optimisation:</b> make SDR profile relevant to ICP and add conversion assets (Assessment link).</li>
+        <li><b>HeyReach:</b> upload installed-base contacts; send ~20 connection requests/day per SDR account.</li>
+        <li><b>DM cadence:</b> 3 automated messages for new connections (cadence agreed in build).</li>
+        <li><b>Posting:</b> SDR posts 1–2×/week using programme themes to build social proof and lift accept rates.</li>
+        <li><b>Paid:</b> use LinkedIn ads (matched audiences) to ensure top-of-funnel content reaches the full list.</li>
+        <li><b>Amplification:</b> coordinate active Proof people to support engagement (likes/comments/saves/reposts).</li>
+      </ul>
 
-<div class="card section">
-  <h3>Email</h3>
-  <ul class="list">
-    <li><b>Newsletter:</b> monthly Ping + monthly SailPoint (expect low initial engagement; builds familiarity)</li>
-    <li><b>Sequences:</b> align with SDR follow-up and nurture where it improves conversion</li>
-    <li><b>Prospecting:</b> use semi-automated email outreach (Prospecting Agent) to scale outreach</li>
-  </ul>
-  <p class="meta"><b>Impact:</b> Medium · <b>Timeline:</b> 2nd phase</p>
-</div>
-    </section>
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> higher-quality conversations and clicks into the Assessment landing page.
+      </div>
+    </div>
+
+    <!-- Website -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">Website (Assessment-first conversion path)</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Impact: High</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Timeline: ASAP</span>
+        </div>
+      </div>
+
+      <p class="sub">Make the Assessment the most obvious “next step” across relevant site journeys.</p>
+
+      <ul class="list">
+        <li><b>Landing page:</b> dedicated page positioning the Value Realisation Assessment (Ping + SailPoint variants).</li>
+        <li><b>Promotion:</b> site CTAs + pop-ups to drive visibility and conversions.</li>
+        <li><b>Internal linking:</b> route from relevant pages + blogs into the Assessment landing page.</li>
+        <li><b>Tracking:</b> ensure HubSpot capture of visits, repeat visits, and Assessment starts/completions.</li>
+      </ul>
+
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> Assessment completions and clear signals for SDR prioritisation.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">Email (installed base warming + nurture)</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(47,179,147,.25);background:rgba(47,179,147,.08);">Impact: Medium</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(47,179,147,.25);background:rgba(47,179,147,.08);">Timeline: Phase 2</span>
+        </div>
+      </div>
+
+      <p class="sub">Build familiarity over time and reinforce key themes that support SDR conversion.</p>
+
+      <ul class="list">
+        <li><b>Newsletters:</b> one monthly for Ping, one monthly for SailPoint (expect low initial open/click; focus on warming).</li>
+        <li><b>Enable SDR:</b> repurpose content into 1:1 templates and short sequences where appropriate.</li>
+        <li><b>Prospecting:</b> Use semi-automated email outreach (Prospecting Agent) to scale outreach.</li>
+      </ul>
+
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> increased familiarity + repeated exposures to the Assessment offer.
+      </div>
+    </div>
+
+    <!-- LLMs / AEO -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">LLMs (AEO) via Searchable</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(47,179,147,.25);background:rgba(47,179,147,.08);">Impact: Medium</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(47,179,147,.25);background:rgba(47,179,147,.08);">Timeline: Phase 2</span>
+        </div>
+      </div>
+
+      <p class="sub">Create content structured to be found and referenced when buyers use LLMs to research optimisation questions.</p>
+
+      <ul class="list">
+        <li><b>Question mining:</b> use Searchable to identify common questions about Ping/SailPoint value realisation.</li>
+        <li><b>LLM-first blogs:</b> write and structure posts to answer the question clearly (and link into the Assessment).</li>
+        <li><b>Measurement:</b> track assisted conversions (blog → Assessment visit/start) rather than raw traffic vanity metrics.</li>
+      </ul>
+
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> incremental high-intent visits and “assist” conversions into the Assessment path.
+      </div>
+    </div>
+
+    <!-- Connection loop -->
+    <div class="card section">
+      <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+        <h3 style="margin:0;">How the channels connect (simple operating loop)</h3>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end;">
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Design: joined-up</span>
+          <span style="font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(176,44,167,.25);background:rgba(176,44,167,.08);">Starts: ASAP</span>
+        </div>
+      </div>
+
+      <p class="sub">Every channel pushes toward the same next step — then we use signals to prioritise follow-up.</p>
+
+      <ul class="list">
+        <li><b>Reach:</b> LinkedIn organic + paid + email warming increases exposure across the installed base.</li>
+        <li><b>Convert:</b> website landing page + Assessment provide a clear action and collect intent signals.</li>
+        <li><b>Prioritise:</b> HubSpot signals/score flags “worth a call” accounts for the SDR.</li>
+        <li><b>Learn:</b> SDR outcomes feed back into content, messaging, and scoring thresholds.</li>
+      </ul>
+
+      <div class="noteBox" style="margin-top:12px;">
+        <b>Output:</b> fewer “cold” conversations and more assessment-led meetings.
+      </div>
+    </div>
+  </div>
+</section>
 
     
     <section class="section" id="panel-content" data-panel aria-labelledby="tab-content">
